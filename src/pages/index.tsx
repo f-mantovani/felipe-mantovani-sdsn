@@ -16,11 +16,15 @@ export default function Home({
     <main
       className={`grid-rows-[auto, 1fr, auto] grid min-h-screen items-center px-12`}
     >
-      <h1>HOME PAGE</h1>
+      <h1>Pathways to Progress</h1>
 
       <div className="grid grid-cols-6 gap-8">
         {goals.map((goal) => (
-          <Link key={goal.code} href={`/goal-details/${goal.code}`}>
+          <Link
+            key={goal.code}
+            href={`/goal-details/${goal.code}`}
+            data-cy-goal
+          >
             {placeIcon(goal)}
           </Link>
         ))}
@@ -59,6 +63,7 @@ function placeIcon(goal: Goals) {
       height={squareProportions}
       alt={goal.title}
       title={goal.title}
+      data-cy-goal-img={goal.code}
       priority
     />
   );
