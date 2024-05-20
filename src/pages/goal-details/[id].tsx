@@ -9,6 +9,8 @@ import {
   goalsRequest,
 } from "../../utils/requests";
 import { CountryData, Goals } from "../../types";
+import { SdgCard } from "../../components/SdgCard";
+import { Legend } from "../../components/Legend";
 
 const GoalDetails = ({
   goal,
@@ -27,7 +29,7 @@ const GoalDetails = ({
       </header>
 
       {/* Countries Data */}
-      <section data-cy-countries>
+      <section>
         <h3>Countries score for - {goalTitle}</h3>
         <div className="grid grid-cols-3 gap-6">
           {countriesData.map((country) => {
@@ -38,36 +40,15 @@ const GoalDetails = ({
               score: (+country[`Goal_${goal.code}_Score`]).toFixed(2),
             };
 
-            return (
-              <div
-                key={country.ID}
-                data-cy-country-card
-                className="grid grid-rows-2 rounded-lg border-2 border-solid border-black px-8 py-4 text-lg dark:border-white"
-              >
-                <div className="flex justify-between text-xl">
-                  <h3>{score.name}</h3>
-                  <p>Score: {score.score}</p>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <p>Score rating:</p>
-                    <div
-                      style={{ backgroundColor: score.rating }}
-                      className="h-6 w-6 rounded-full "
-                    ></div>
-                    <p>{score.rating}</p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <p>Score trend:</p>
-                    {score.trend}
-                  </div>
-                </div>
-              </div>
-            );
+            return <SdgCard score={score} key={country.ID} />;
           })}
         </div>
+      </section>
+
+      {/* Legend for the info */}
+      <section>
+        <h4>Legend</h4>
+        <Legend />
       </section>
     </>
   );

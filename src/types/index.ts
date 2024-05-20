@@ -11,3 +11,10 @@ export type CountryData = {
 	Name: string;
 	Region: string;
 }
+
+export type ScoreProps = {
+	name: string;
+	rating: string;
+	trend: string;
+	score: string;
+  };
