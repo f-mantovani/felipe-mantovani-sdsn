@@ -1,9 +1,13 @@
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
+// @ts-ignore
+import { getColor } from '@sdgindex/data/sdgs';
 
-import axios from "axios";
-import { Goals } from "../types";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+
+
+import { Goals } from "../types";
 
 export default function Home({
   goals,
@@ -12,7 +16,7 @@ export default function Home({
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 `}
     >
-      <h1>Test</h1>
+      <h1>HOME PAGE</h1>
 
       <div className="grid grid-cols-6 gap-8">
         {goals.map((goal) => (
@@ -39,9 +43,12 @@ export const getStaticProps = (async () => {
 
 function placeIcon(goal: Goals) {
   const squareProportions = 120;
+  const goalNumber = Number(goal.code)
+  const color = getColor(goalNumber);
   return (
     <Image
       src={`/assets/sdg-goals/sdg${goal.code}-white.svg`}
+	  style={{backgroundColor: color}}
       className="bg-red-500"
       width={squareProportions}
       height={squareProportions}
