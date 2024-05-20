@@ -90,14 +90,12 @@ yarn dev
 
 1. The majority of my NextJs base was with the App Router
 2. Using JQuery inside of Cypress
-3. Some styling blockage
-4. Understanding how the data came from the API
-5. Creating a legend for the colors and arrows
+3. Understanding how the data came from the API
+4. Creating a legend for the colors and arrows
 
 #### Solutions
 
 1. Reading the documentation and trial and error
 2. A quickly search on Google solved the problem in that case followed with some trial and error to get the css property followed by another research
-3. Expand the page to take the full screen on desktop `html, body, #__next`
-4. The data was a matter of analysis how the data came back and experiment a little bit
-5. The colors and arrows I needed to look upon the Development report and after I found also a ranking website that I could discover each one of the specific meanings
+3. The data was a matter of analysis how the data came back and experiment a little bit
+4. The colors and arrows I needed to look upon the Development report and after I found also a ranking website that I could discover each one of the specific meanings
