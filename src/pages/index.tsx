@@ -5,7 +5,6 @@ import { Goals } from "../types";
 import { Footer } from "../components/Footer";
 import { goalsRequest } from "../utils/requests";
 import { GoalIcon } from "../components/GoalIcon/GoalIcon";
-import { PageTitle, Paragraph } from "../typography";
 
 export default function Home({
   goals,

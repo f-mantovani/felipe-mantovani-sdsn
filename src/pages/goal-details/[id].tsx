@@ -13,7 +13,6 @@ import { CountryData, Goals } from "../../types";
 import { SdgCard } from "../../components/SdgCard";
 import { Legend } from "../../components/Legend";
 import { GoalIcon } from "../../components/GoalIcon/GoalIcon";
-import { PageTitle, Paragraph, Subtitle } from "../../typography";
 
 const GoalDetails = ({
   goal,
