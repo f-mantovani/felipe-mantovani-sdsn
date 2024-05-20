@@ -92,6 +92,7 @@ yarn dev
 2. Using JQuery inside of Cypress
 3. Understanding how the data came from the API
 4. Creating a legend for the colors and arrows
+5. Some style differences between `build` and `dev`
 
 #### Solutions
 
@@ -99,3 +100,4 @@ yarn dev
 2. A quickly search on Google solved the problem in that case followed with some trial and error to get the css property followed by another research
 3. The data was a matter of analysis how the data came back and experiment a little bit
 4. The colors and arrows I needed to look upon the Development report and after I found also a ranking website that I could discover each one of the specific meanings
+5. Checked during deployment and fixed it

@@ -12,21 +12,21 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <header className="flex flex-col gap-8">
-        <PageTitle className={"text-center"}>
+      <header className="flex flex-col gap-8 ">
+        <h1 className="text-center text-4xl">
           Pathways to Progress: Exploring the SDGs
-        </PageTitle>
-        <Paragraph className={"max-w-[77ch text-center]"}>
+        </h1>
+        <p className={"mx-auto max-w-[77ch]"}>
           Welcome to our landing page dedicated to the United Nations
           Sustainable Development Goals (SDGs). Here, you can explore the 17
           SDGs, each representing a critical aspect of global development. Click
           on the icons below to delve deeper into each goal and discover how
           five diverse countries (
-          <b>Brazil, Finland, France, India, and China</b>) are contributing
-          to these objectives. By examining their progress, we aim to foster
+          <b>Brazil, Finland, France, India, and China</b>) are contributing to
+          these objectives. By examining their progress, we aim to foster
           greater awareness and understanding of the collective efforts needed
           to achieve a sustainable future for all.
-        </Paragraph>
+        </p>
       </header>
 
       <div className="grid grid-cols-6 gap-8">

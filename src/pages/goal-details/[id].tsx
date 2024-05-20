@@ -26,17 +26,17 @@ const GoalDetails = ({
       <header className="flex items-start gap-8">
         <GoalIcon goal={goal} />
         <div className="flex flex-col gap-4">
-          <PageTitle>
+          <h1 className="text-4xl">
             SDG {goal.code} - {goalTitle}
-          </PageTitle>
-          <Subtitle> {goal.title} </Subtitle>
-          <Paragraph>{goal.description}</Paragraph>
+          </h1>
+          <h2 className="text-2xl"> {goal.title} </h2>
+          <p className="text-lg">{goal.description}</p>
         </div>
       </header>
 
       {/* Countries Data */}
       <section className="flex flex-col gap-4">
-        <Subtitle>Countries score for - {goalTitle}</Subtitle>
+        <h2 className="text-2xl">Countries score for - {goalTitle}</h2>
         <div className="grid grid-cols-3 gap-6">
           {countriesData.map((country) => {
             const score = {
@@ -53,7 +53,7 @@ const GoalDetails = ({
 
       {/* Legend for the info */}
       <section className="flex flex-col gap-4">
-        <Subtitle>Legend</Subtitle>
+        <h2 className="text-2xl">Legend</h2>
         <Legend />
       </section>
     </>
