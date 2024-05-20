@@ -2,6 +2,8 @@
 
 [![Cypress](https://github.com/f-mantovani/felipe-mantovani-sdsn/actions/workflows/cypress.yml/badge.svg)](https://github.com/f-mantovani/felipe-mantovani-sdsn/actions/workflows/cypress.yml)
 
+You can check the deployed version here: [https://felipe-mantovani-sdsn.vercel.app/](https://felipe-mantovani-sdsn.vercel.app/)
+
 ## How to run
 
 ### Using pnpm
