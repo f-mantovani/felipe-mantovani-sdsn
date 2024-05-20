@@ -8,6 +8,7 @@ import axios from "axios";
 
 import { Goals } from "../types";
 import { Footer } from "../components/Footer";
+import { goalsRequest } from "../utils/requests";
 
 export default function Home({
   goals,
@@ -36,9 +37,7 @@ export default function Home({
 }
 
 export const getStaticProps = (async () => {
-  const { data } = await axios.get<Goals[]>(
-    `https://unstats.un.org/SDGAPI/v1/sdg/Goal/List?includechildren=false`,
-  );
+  const { data } = await goalsRequest()
 
   return {
     props: { goals: data },
