@@ -9,8 +9,11 @@ import {
   goalsRequest,
 } from "../../utils/requests";
 import { CountryData, Goals } from "../../types";
+
 import { SdgCard } from "../../components/SdgCard";
 import { Legend } from "../../components/Legend";
+import { GoalIcon } from "../../components/GoalIcon/GoalIcon";
+import { PageTitle, Paragraph, Subtitle } from "../../typography";
 
 const GoalDetails = ({
   goal,
@@ -20,17 +23,20 @@ const GoalDetails = ({
   return (
     <>
       {/* Top of the page with first info about the goal */}
-      <header>
-        <h1>
-          SDG {goal.code} - {goalTitle}
-        </h1>
-        <h2> {goal.title} </h2>
-        <p>{goal.description}</p>
+      <header className="flex items-start gap-8">
+        <GoalIcon goal={goal} />
+        <div className="flex flex-col gap-4">
+          <PageTitle>
+            SDG {goal.code} - {goalTitle}
+          </PageTitle>
+          <Subtitle> {goal.title} </Subtitle>
+          <Paragraph>{goal.description}</Paragraph>
+        </div>
       </header>
 
       {/* Countries Data */}
-      <section>
-        <h3>Countries score for - {goalTitle}</h3>
+      <section className="flex flex-col gap-4">
+        <Subtitle>Countries score for - {goalTitle}</Subtitle>
         <div className="grid grid-cols-3 gap-6">
           {countriesData.map((country) => {
             const score = {
@@ -46,8 +52,8 @@ const GoalDetails = ({
       </section>
 
       {/* Legend for the info */}
-      <section>
-        <h4>Legend</h4>
+      <section className="flex flex-col gap-4">
+        <Subtitle>Legend</Subtitle>
         <Legend />
       </section>
     </>
