@@ -3,7 +3,10 @@ import { Arrow } from "../Arrow";
 
 export const SdgCard = ({ score }: { score: ScoreProps }) => {
   return (
-    <div className="grid grid-rows-2 rounded-lg border-2 border-solid border-black px-8 py-4 text-lg dark:border-white">
+    <div
+      data-cy-country-card
+      className="grid grid-rows-2 rounded-lg border-2 border-solid border-black px-8 py-4 text-lg dark:border-white"
+    >
       <div className="flex justify-between text-xl">
         <h3>{score.name}</h3>
         <p>Score: {score.score}</p>

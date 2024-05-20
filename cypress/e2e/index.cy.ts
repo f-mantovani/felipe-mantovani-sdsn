@@ -48,3 +48,20 @@ const goalsBackgrounds: { code: number; color: string }[] = [
 	  });
 	});
   });
+
+  describe('Navigate to goal details page', () => {
+	it("Given that I'm on the home page", () => {
+		cy.visit('/')
+	})
+
+	it('should navigate to the SDG 1 goal details page', () => {
+		cy.get('img[data-cy-goal-img="1"]').click()
+		cy.wait(200)
+
+		cy.get('h1').contains('No poverty')
+	})
+
+	it('should have 5 country cards', () => {
+		cy.get('[data-cy-country-card]').should('have.length', 5)
+	})
+})
