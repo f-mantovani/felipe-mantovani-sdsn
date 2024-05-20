@@ -4,7 +4,6 @@ import { getColor } from "@sdgindex/data/sdgs";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
 
 import { Goals } from "../types";
 import { Footer } from "../components/Footer";
@@ -14,9 +13,7 @@ export default function Home({
   goals,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <main
-      className={`grid-rows-[auto, 1fr, auto] grid min-h-screen items-center px-12`}
-    >
+	<>
       <h1>Pathways to Progress</h1>
 
       <div className="grid grid-cols-6 gap-8">
@@ -32,7 +29,7 @@ export default function Home({
       </div>
 
       <Footer />
-    </main>
+	</>
   );
 }
 
