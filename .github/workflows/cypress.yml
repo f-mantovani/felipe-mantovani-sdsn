@@ -1,0 +1,28 @@
+name: Cypress
+on: 
+  push: 
+   paths-ignore:
+    - '**/README.md'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v4
+       - uses: pnpm/action-setup@v3
+         with:
+          version: 8
+       - name: Use Node.js 20.x
+         uses: actions/setup-node@v4
+         with:
+          node-version: 20.x
+          cache: 'pnpm'
+       - name: Install dependencies
+         run: pnpm install
+       - name: Cypress Install
+         run: pnpm dlx cypress install
+       - name: Run tests
+         run: pnpm test:build
+
+       
+         env:
+           CI: true
